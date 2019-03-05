@@ -164,7 +164,7 @@ int main(void)
 		data_buffer = prepare_data_buffer(main_data);
 		main_packet = pack_glucose_packet(data_buffer);
 		uart_buffer = create_uart_buffer(main_packet);
-		HAL_UART_Transmit(&huart2, (uint8_t*)uart_buffer, 9, 1000);
+		HAL_UART_Transmit(&huart2, (uint8_t*)uart_buffer, 10, 1000);
 		free(data_buffer);
 		free(main_packet.data);
 		free(uart_buffer);

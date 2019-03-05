@@ -54,7 +54,7 @@ GlucosePacket pack_glucose_packet(uint8_t* data_buffer)
 
 uint8_t* create_uart_buffer(GlucosePacket packet)
 {
-	uint8_t* uart_buffer = malloc(7 * sizeof(uint8_t));
+	uint8_t* uart_buffer = malloc(8 * sizeof(uint8_t));
 	uart_buffer[0] = packet.sync_bytes[0];
 	uart_buffer[1] = packet.sync_bytes[1];
 	uart_buffer[2] = packet.sync_bytes[2];
@@ -62,6 +62,7 @@ uint8_t* create_uart_buffer(GlucosePacket packet)
 	uart_buffer[4] = packet.data[1];
 	uart_buffer[5] = packet.data[2];
 	uart_buffer[6] = packet.data[3];
+	uart_buffer[7] = '\n';
 	return uart_buffer;
 }
 
