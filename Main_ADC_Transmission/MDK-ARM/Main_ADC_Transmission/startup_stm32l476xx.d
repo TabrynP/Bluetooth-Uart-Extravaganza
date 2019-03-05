@@ -1,0 +1,1 @@
+main_adc_transmission\startup_stm32l476xx.o: startup_stm32l476xx.s
